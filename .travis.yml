@@ -16,8 +16,8 @@ before_script:
 script:
   - docker --version # print the version for logging
   - docker build -t udagram-reverseproxy .
-  - docker tag udagram-reverseproxy psmprd/udagram-reverseproxy:v1
+  - docker tag udagram-reverseproxy psmprd/udagram-reverseproxy:v2
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker push psmprd/udagram-reverseproxy:v1 
+  - docker push psmprd/udagram-reverseproxy:v2 
